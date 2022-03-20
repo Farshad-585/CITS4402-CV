@@ -10,15 +10,17 @@ clear;
 close all;
 
 % Tunable variables
-image1 = "obama.jpg";
-image2 = "mccain.jpg";
-c_l = 0.035; % lowpass  cut-off
-c_h = 0.1;   % highpass cut_off
-n = 1;
+image1 = "bill.png";
+image2 = "steve.png";
+c_l = 0.15; % lowpass  cut-off
+c_h = 0.1;  % highpass cut_off
+n = 2;
 
-% Reading original images
-im1 = imread(image1);
-im2 = imread(image2);
+% Reading original images and resizing to same size
+img1 = imread(image1);
+img2 = imread(image2);
+im1 = imresize(img1, [256, 256]);
+im2 = imresize(img2, [256, 256]);
 
 % Converting original images to black and white
 g1 = rgb2gray(im1);
